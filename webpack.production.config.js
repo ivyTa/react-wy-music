@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // The entry file. All your app roots fromn here.
     entry: [
-        path.join(__dirname, 'app/final/index.js')
+        path.join(__dirname, 'src/index.js')
     ],
     // Where you want the output to go
     output: {
@@ -25,7 +25,7 @@ module.exports = {
         // change name because the hash part changes. We want hash name changes to bust cache
         // on client browsers.
         new HtmlWebpackPlugin({
-            template: './app/index.tpl.html',
+            template: './src/index.tpl.html',
             inject: 'body',
             filename: './index.html'
         }),
