@@ -3,8 +3,9 @@ require('./listItem.less')
 const PubSub = require('pubsub-js')
 
 export default class Progress extends Component {
-    getDefaultProps() {
-        return {
+    constructor() {
+        super()
+        this.state = {
             barColor: '#2f9842'
         }
     }

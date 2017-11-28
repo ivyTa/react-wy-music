@@ -7,6 +7,16 @@ require('./player.less')
 let duration = null
 
 export default class Player extends Component {
+    constructor() {
+        super()
+        this.state = {
+            progress: 0,
+            volume: 0,
+            isPlay: true,
+            leftTime: ''
+        }
+    }
+
     componentDidMount() {
         $("#player").bind($.jPlayer.event.timeupdate, (e) => {
             duration = e.jPlayer.status.duration
@@ -64,19 +74,12 @@ export default class Player extends Component {
         PubSub.publish('CHANAGE_REPEAT')
     }
 
-    getInitialState() {
-        return {
-            progress: 0,
-            volume: 0,
-            isPlay: true,
-            leftTime: ''
-        }
-    }
+
 
     render() {
         return (
             <div className="player-page">
-                <h1 className="caption"><Link to="/list">我的私人音乐坊 &gt</Link></h1>
+                <h1 className="caption"><Link to="/list">网易云音乐</Link></h1>
                 <div className="mt20 row">
                     <div className="controll-wrapper">
                         <h2 className="music-title">{this.props.currentMusitItem.title}</h2>
@@ -106,7 +109,7 @@ export default class Player extends Component {
                             <div>
                                 <i className="icon prev" onClick={this.prev}></i>
                                 <i className={`icon ml20 ${this.state.isPlay ? 'pause' : 'play'}`}
-                                   onClick={this.play}></i>
+                                   onClick={this.play.bind(this)}></i>
                                 <i className="icon next ml20" onClick={this.next}></i>
                             </div>
                             <div className="-col-auto">
