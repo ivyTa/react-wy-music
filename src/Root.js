@@ -1,5 +1,5 @@
 import React, {render} from 'react'
-import {Router, IndexRoute, Link, Route, browserHistory, hashHistory} from 'react-router'
+import {Router, IndexRoute, Link, Route, hashHistory} from 'react-router'
 import {MUSIC_LIST} from './file'
 import {randomRange} from './util'
 const PubSub = require('pubsub-js')
