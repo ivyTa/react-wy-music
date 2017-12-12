@@ -85,7 +85,7 @@ export default class Player extends Component {
                         <h2 className="music-title">{this.props.currentMusitItem.title}</h2>
                         <h3 className="music-artist mt10">{this.props.currentMusitItem.artist}</h3>
                         <div className="row mt20">
-                            <div className="left-time -col-auto">-{this.state.leftTime}</div>
+                            <div className="left-time -col-auto">{this.state.leftTime}</div>
                             <div className="volume-container">
                                 <i className="icon-volume rt" style={{top: 5, left: -5}}></i>
                                 <div className="volume-wrapper">
